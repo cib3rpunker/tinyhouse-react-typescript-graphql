@@ -6,7 +6,7 @@ const userPassword = 'Oll3rbyte$';
 const cluster = 'horrorcluster.gt0ea';
 const url = `mongodb+srv://${user}:${userPassword}@${cluster}.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
-export const connectDatabase = async () => {
+export const connectDatabase = async (): Promise<Database> => {
   const client = await MongoClient.connect(url);
 
   const db = client.db('main');

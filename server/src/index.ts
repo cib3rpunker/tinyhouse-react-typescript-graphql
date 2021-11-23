@@ -40,7 +40,7 @@ async function startApolloServer(typeDefs, resolvers) {
     console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
 
     const listings = await db.listings.find({}).toArray();
-    console.log(listings[0]);
+    console.log(listings[0].numOfGuests);
 
   } catch (error) {
     console.log(error);

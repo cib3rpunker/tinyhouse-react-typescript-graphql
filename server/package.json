@@ -2,8 +2,12 @@
   "name": "tinyhouse-v1-server",
   "version": "0.1.0",
   "dependencies": {
+    "@graphql-tools/utils": "^8.5.3",
+    "apollo-server-core": "^3.5.0",
+    "apollo-server-express": "^3.5.0",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "graphql": "^15.7.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
@@ -19,6 +23,7 @@
   "scripts": {
     "build": "tsc -p ./",
     "dev": "nodemon --watch './**/*.ts' --exec npx ts-node src/index.ts",
+    "dev1": "nodemon --watch './**/*.ts' --exec npx ts-node src/index.js",
     "dev2": "nodemon --watch 'src/**/*.ts' --exec npx ts-node src/index.ts",
     "start1": "nodemon src/index.ts",
     "start2": "nodemon --watch './src/index.ts' --exec npx ts-node src/index.ts"

@@ -5,6 +5,10 @@
     "rootDir": "./src",
     "outDir": "./build",
     "esModuleInterop": true,
-    "strict": true
+    // to make typescript tolerate parameters without declaring their type, edit the
+    // disable this rule:
+    // "strict": true,
+    // enable this rule:
+    "noImplicitAny": false
   }
 }

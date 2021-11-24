@@ -1,9 +1,9 @@
 //import { IResolvers } from "apollo-server-express"
 import { IResolvers } from '@graphql-tools/utils';
 import { ObjectId } from 'mongodb';
-import { Database, Listing } from '../lib/types';
+import { Database, Listing } from '../../../lib/types';
 
-export const resolvers: IResolvers = {
+export const listingResolvers: IResolvers = {
   //export const resolvers = {
   Query: {
     listings: async (

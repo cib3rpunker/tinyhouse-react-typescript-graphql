@@ -23,11 +23,13 @@
     "typescript": "^4.5.2"
   },
   "scripts": {
-    "build": "tsc -p ./",
     "dev": "nodemon --watch './**/*.ts' --exec npx ts-node src/index.ts",
-    "dev1": "nodemon --watch './**/*.ts' --exec npx ts-node src/index.js",
-    "dev2": "nodemon --watch 'src/**/*.ts' --exec npx ts-node src/index.ts",
-    "start1": "nodemon src/index.ts",
-    "start2": "nodemon --watch './src/index.ts' --exec npx ts-node src/index.ts"
+    "dev1 NOT USED": "nodemon --watch './**/*.ts' --exec npx ts-node src/index.js",
+    "dev2 NOT USED": "nodemon --watch 'src/**/*.ts' --exec npx ts-node src/index.ts",
+    "start1 NOT USED": "nodemon src/index.ts",
+    "start2 NOT USED": "nodemon --watch './src/index.ts' --exec npx ts-node src/index.ts",
+
+    "build": "tsc -p ./",
+    "seed": "ts-node temp/seed.ts"
   }
 }

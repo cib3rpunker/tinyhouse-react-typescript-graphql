@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 import { ApolloServer } from 'apollo-server-express';
 import { connectDatabase } from './database'
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
-import express, { Application } from 'express';
+import express from 'express';  //, { Application }
 import http from 'http';
 import { typeDefs, resolvers } from './graphql';
 //import { DocumentNode } from 'graphql';
@@ -36,11 +38,12 @@ async function startApolloServer(typeDefs, resolvers) {
     });
 
     // Modified server startup
-    await new Promise<void>(resolve => httpServer.listen({ port: 4000 }, resolve));
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+    await new Promise<void>(resolve => httpServer.listen({ port: process.env.PORT }, resolve));
+    console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`);
 
     const listings = await db.listings.find({}).toArray();
-    console.log(listings[0].numOfGuests);
+    console.log("🚀 ~ file: index.ts ~ line 45 ~ startApolloServer ~ listings", listings)
+    console.log('listings[0].title: ', listings[0].title);
 
   } catch (error) {
     console.log(error);
